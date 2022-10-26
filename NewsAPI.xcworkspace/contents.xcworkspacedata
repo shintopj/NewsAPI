@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Workspace
+   version = "1.0">
+   <FileRef
+      location = "group:NewsMainApp/NewsMainApp.xcodeproj">
+   </FileRef>
+   <Group
+      location = "group:Auth"
+      name = "Auth">
+      <FileRef
+         location = "group:../Auth/AuthPresenter">
+      </FileRef>
+      <FileRef
+         location = "group:../Auth/AuthUI">
+      </FileRef>
+   </Group>
+   <Group
+      location = "group:News"
+      name = "News">
+      <FileRef
+         location = "group:NewsKit">
+      </FileRef>
+      <FileRef
+         location = "group:../News/NewsUI">
+      </FileRef>
+      <FileRef
+         location = "group:../News/NewsPresenter">
+      </FileRef>
+      <FileRef
+         location = "group:../News/NewsInfrastructure">
+      </FileRef>
+   </Group>
+   <Group
+      location = "group:Shared"
+      name = "Shared">
+      <FileRef
+         location = "group:../Shared/NetworkInfrastructure">
+      </FileRef>
+   </Group>
+</Workspace>
