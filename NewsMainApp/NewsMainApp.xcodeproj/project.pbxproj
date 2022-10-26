@@ -491,6 +491,7 @@
 				DEVELOPMENT_TEAM = 4ZM46WQ4QW;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = NewsMainApp/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = "News App";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen.storyboard;
 				INFOPLIST_KEY_UIMainStoryboardFile = "";
@@ -519,6 +520,7 @@
 				DEVELOPMENT_TEAM = 4ZM46WQ4QW;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = NewsMainApp/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = "News App";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen.storyboard;
 				INFOPLIST_KEY_UIMainStoryboardFile = "";
@@ -683,6 +685,7 @@
 				DEVELOPMENT_TEAM = 4ZM46WQ4QW;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = NewsMainApp/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = "News App";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen.storyboard;
 				INFOPLIST_KEY_UIMainStoryboardFile = "";
