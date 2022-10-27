@@ -13,7 +13,7 @@ import NewsUI
 enum NewsPageConfigurator {
     
     static func createNewsPage() -> UINavigationController {
-        let view = NewsPageView() { detailsItem in
+        let view = NewsPageView(store: NewsPresenter(url: NetworkConfig.apiBaseURL)) { detailsItem in
             Router.toNewsDetails(item: detailsItem)
         }
         

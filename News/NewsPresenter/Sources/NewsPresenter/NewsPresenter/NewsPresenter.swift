@@ -8,18 +8,20 @@ public class NewsPresenter: ObservableObject {
     @Published public var error: Error?
     
     private var articles: [Article]?
+    private var baseURL: URL
     
-    public init() {
+    public init(url baseURL: URL) {
+        self.baseURL = baseURL
         getNews()
     }
     
     public func getNews() {
         Task {
-            await getNewsArticles()
+            await getNewsArticles(networkController: NewsNetworkController(baseURL: baseURL))
         }
     }
     
-    public func getNewsArticles(networkController: NewsNetworkControllerProtocol = NewsNetworkController()) async {
+    public func getNewsArticles(networkController: NewsNetworkControllerProtocol) async {
         
         do {
             let newsArticles = try await networkController.getNews()

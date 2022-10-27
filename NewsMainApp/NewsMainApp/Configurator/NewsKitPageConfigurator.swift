@@ -13,16 +13,11 @@ enum NewsKitPageConfigurator {
     
     static func createNewsPage() -> UINavigationController {
         
-        let vc = NewsTableViewController(presenter: NewsPresenter()) { item in
+        let vc = NewsTableViewController(
+            presenter: NewsPresenter(url: NetworkConfig.apiBaseURL)) { item in
             Router.toNewsKitDetails(item: item)
         }
-        
-//        let view = NewsPageView() { detailsItem in
-//            Router.toNewsDetails(item: detailsItem)
-//        }
-        
-//        let vc = UIHostingController(rootView: view)
-        
+  
         let navController = UINavigationController(rootViewController: vc)
         vc.navigationItem.title = "News Kit"
         

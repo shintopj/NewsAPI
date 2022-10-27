@@ -7,11 +7,11 @@
 
 import Foundation
 
-enum Url {
-    
+enum Urls {
     enum News {
-        static var topHeadlines: URL {
-            return apiURL("/top-headlines?country=us&category=business&apiKey=0f66d062255944e4a747e0f6598618fa")
+        
+        static var topHeadlines: (URL) -> URL = { baseURL in
+            return baseURL.appendingPathComponent("top-headlines")
         }
     }
 }

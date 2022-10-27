@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		7962D355290A55C4006FF542 /* NetworkConfig.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7962D354290A55C4006FF542 /* NetworkConfig.swift */; };
 		79A1D05F28F93EC900D4D8BD /* NewsKitPageConfigurator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79A1D05E28F93EC900D4D8BD /* NewsKitPageConfigurator.swift */; };
 		79A1D06128F93EEA00D4D8BD /* NewsKit in Frameworks */ = {isa = PBXBuildFile; productRef = 79A1D06028F93EEA00D4D8BD /* NewsKit */; };
 		79AD81BE28EB1BFC008417D1 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79AD81BD28EB1BFC008417D1 /* AppDelegate.swift */; };
@@ -43,6 +44,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		7962D354290A55C4006FF542 /* NetworkConfig.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkConfig.swift; sourceTree = "<group>"; };
 		79A1D05E28F93EC900D4D8BD /* NewsKitPageConfigurator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewsKitPageConfigurator.swift; sourceTree = "<group>"; };
 		79AD81BA28EB1BFC008417D1 /* NewsMainApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = NewsMainApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		79AD81BD28EB1BFC008417D1 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -144,6 +146,7 @@
 		79AD81EF28EB1CE0008417D1 /* AppDelegate */ = {
 			isa = PBXGroup;
 			children = (
+				7962D354290A55C4006FF542 /* NetworkConfig.swift */,
 				79AD81BD28EB1BFC008417D1 /* AppDelegate.swift */,
 				79AD81BF28EB1BFC008417D1 /* SceneDelegate.swift */,
 				79AD81F028EB1FDA008417D1 /* MainTabBar.swift */,
@@ -316,6 +319,7 @@
 				79AD81EE28EB1CD5008417D1 /* Router.swift in Sources */,
 				79AD823C28EC284C008417D1 /* NewsPageConfigurator.swift in Sources */,
 				79AD81BE28EB1BFC008417D1 /* AppDelegate.swift in Sources */,
+				7962D355290A55C4006FF542 /* NetworkConfig.swift in Sources */,
 				79AD823828EC279B008417D1 /* Router+NewsExtensions.swift in Sources */,
 				79A1D05F28F93EC900D4D8BD /* NewsKitPageConfigurator.swift in Sources */,
 				79AD81F128EB1FDA008417D1 /* MainTabBar.swift in Sources */,

@@ -14,14 +14,26 @@ public protocol NewsNetworkControllerProtocol {
 
 public actor NewsNetworkController: NewsNetworkControllerProtocol {
     
-    let controller: NetworkControllerProtocol
+    private let controller: NetworkControllerProtocol
+    private let baseURL: URL
     
-    public init(controller: NetworkControllerProtocol = NetworkController()) {
+    public init(baseURL: URL, controller: NetworkControllerProtocol = NetworkController()) {
         self.controller = controller
+        self.baseURL = baseURL
     }
     
     public func getNews() async throws -> NewsArticle {
-        let request = NetworkRequest.get(url: Url.News.topHeadlines, headers: [:])
+        
+        let parameters = [
+            "country": "us",
+            "category": "business",
+            "apiKey": "0f66d062255944e4a747e0f6598618fa"
+        ]
+        
+//        return apiURL("/top-headlines?country=us&category=business&apiKey=0f66d062255944e4a747e0f6598618fa")
+        
+        
+        let request = NetworkRequest.get(url: Urls.News.topHeadlines(baseURL), parameters: parameters, headers: [:])
         print(request.url)
         return try await controller.get(request: request)
     }

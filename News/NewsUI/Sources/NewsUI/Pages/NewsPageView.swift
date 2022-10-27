@@ -13,7 +13,7 @@ public struct NewsPageView: View {
     @ObservedObject var store: NewsPresenter
     var callBack: (NewsDetailsModel) -> Void
     
-    public init(store: NewsPresenter = NewsPresenter(), callBack: @escaping (NewsDetailsModel) -> Void) {
+    public init(store: NewsPresenter, callBack: @escaping (NewsDetailsModel) -> Void) {
         self.store = store
         self.callBack = callBack
     }
@@ -43,8 +43,7 @@ public struct NewsPageView: View {
 
 struct NewsPageView_Previews: PreviewProvider {
     static var previews: some View {
-        NewsPageView() { details in 
-            
+        NewsPageView(store: NewsPresenter(url: URL(string: "https://hoogle.com")!)) { details in
         }
     }
 }

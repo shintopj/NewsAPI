@@ -16,7 +16,7 @@ public class NewsTableViewController: DiffableTableViewController<NewsTableViewC
     private var cancellables = Set<AnyCancellable>()
     var callBack: (NewsDetailsModel) -> Void
     
-    public init(presenter: NewsPresenter = NewsPresenter(), callBack: @escaping (NewsDetailsModel) -> Void) {
+    public init(presenter: NewsPresenter, callBack: @escaping (NewsDetailsModel) -> Void) {
         self.presenter = presenter
         self.callBack = callBack
         super.init(nibName: "NewsTableViewController", bundle: Bundle.module)
