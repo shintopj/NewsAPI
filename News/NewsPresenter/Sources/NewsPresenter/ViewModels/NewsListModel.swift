@@ -60,4 +60,15 @@ extension NewsListModel {
         NewsListModel(
             title: "U.S. to use FDPR rule on Chinese buyers of AI and supercomputing chips - The Washington Post")
     }
+    
+    public static var testObjects: [NewsListModel] {
+        
+        [NewsListModel(
+            title: "U.S. to use FDPR rule on Chinese buyers of AI and supercomputing chips - The Washington Post"),
+
+        NewsListModel(
+            title: "U.S. to use FDPR rule on Chinese buyers of AI and supercomputing chips - The Washington Post")
+         ]
+    }
+    
 }

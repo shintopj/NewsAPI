@@ -7,7 +7,6 @@
 
 import Foundation
 
-
 final class NetworkConfig {
     
     // MARK: - Network environment
@@ -46,4 +45,3 @@ final class NetworkConfig {
         return url
     }
 }
-

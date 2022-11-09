@@ -1,49 +1,36 @@
 //
-//  SwiftUIView.swift
+//  NewsListView.swift
 //  
 //
-//  Created by Shinto Joseph on 04/10/2022.
+//  Created by Shinto Joseph on 09/11/2022.
 //
 
 import SwiftUI
 import NewsPresenter
 
 struct NewsListView: View {
-    @State var item: NewsListModel
-    @ObservedObject var imageStore: NewsImagePresenter
     
-    var callBack: () -> Void
+    private var items: [NewsListModel]
+    private var callBack: (NewsListModel) -> Void
     
-    init(item: NewsListModel, callback: @escaping () -> Void) {
-        _item = State(initialValue: item)
-        imageStore = NewsImagePresenter(item: item)
+    init(items: [NewsListModel], callback: @escaping (NewsListModel) -> Void) {
+        self.items = items
         self.callBack = callback
     }
     
     var body: some View {
-        HStack {
-            
-            ImageView(image: imageStore.image ?? UIImage(systemName: "square.and.arrow.down.on.square")!, size: CGSize(width: 44, height: 44))
-            
-            TextView(text: item.title)
-        }
-        .contentShape(Rectangle())
-        .onTapGesture {
-            callBack()
-        }
-        .onAppear {
-            imageStore.loadImage()
-        }
-        .onDisappear {
-            imageStore.cancelLoadImage()
+        List(items) { item in
+            NewsItemView(item: item) {
+                callBack(item)
+            }
         }
     }
 }
 
 struct NewsListView_Previews: PreviewProvider {
     static var previews: some View {
-        NewsListView(item: NewsListModel.testObject) {
-            print("call back")
+        NewsListView(items: NewsListModel.testObjects) { _ in
+            
         }
     }
 }

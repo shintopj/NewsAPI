@@ -21,18 +21,11 @@ public struct NewsPageView: View {
     public var body: some View {
         VStack {
             if let items = store.list {
-                List(items) { item in
-                    NewsListView(item: item) {
-                        callBack(store.getNewsDetailsModel(from: item))
-                    }
+                NewsListView(items: items) { item in
+                    callBack(store.getNewsDetailsModel(from: item))
                 }
             } else if let error = store.error {
-                VStack {
-                    Image(systemName: "error")
-                        .imageScale(.large)
-                        .foregroundColor(.accentColor)
-                    Text(error.localizedDescription)
-                }
+                ErrorView(message: error.localizedDescription)
                 .padding()
             } else {
                 Text("Loading...")

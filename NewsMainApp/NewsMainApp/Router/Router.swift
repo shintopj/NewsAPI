@@ -28,9 +28,6 @@ class Router {
         window = UIWindow(windowScene: windowScene)
         window.frame = windowScene.coordinateSpace.bounds
         
-//        window = UIWindow(frame: windowScene.coordinateSpace.bounds)
-//        window.windowScene = windowScene
-        
         loginStore.$user.sink { [weak self] user in
             self?.initalizeApp(user: user)
         }
