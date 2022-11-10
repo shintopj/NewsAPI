@@ -28,7 +28,7 @@ public struct NewsPageView: View {
                 ErrorView(message: error.localizedDescription)
                 .padding()
             } else {
-                Text("Loading...")
+                LoadingView()
             }
         }
     }

@@ -9,9 +9,12 @@ import SwiftUI
 
 struct TextView: View {
     var text: String
+    var hasError: Bool = false
+    
     var body: some View {
         Text(text)
             .font(.subheadline)
+            .foregroundColor(hasError ? .red : .primary)
     }
 }
 

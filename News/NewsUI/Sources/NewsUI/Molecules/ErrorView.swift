@@ -14,7 +14,7 @@ struct ErrorView: View {
             Image(systemName: "error")
                 .imageScale(.large)
                 .foregroundColor(.accentColor)
-            Text(message)
+            TextView(text: message, hasError: true)
         }
     }
 }
