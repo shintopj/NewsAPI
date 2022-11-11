@@ -25,7 +25,6 @@ public class NewsPresenter: ObservableObject {
         
         do {
             let newsArticles = try await networkController.getNews()
-            print(newsArticles)
             
             DispatchQueue.main.async {
                 if !newsArticles.articles.isEmpty {

@@ -23,17 +23,18 @@ public class DiffableTableViewController<T: BaseTableViewCell<V>, V>: UITableVie
             var initialSnapshot = NSDiffableDataSourceSnapshot<DiffableSection, V>()
             initialSnapshot.appendSections([.main])
             initialSnapshot.appendItems(models)
-            if models.isEmpty {
-                self.state?.update(status: .noData)
+            if models.isEmpty && state?.status != .loading && state?.status != .error  {
+                state?.update(status: .noData)
             }
-            self.dataSource.apply(initialSnapshot, animatingDifferences: true)
-            self.showEmptyViewIfNeeded()
+            dataSource.apply(initialSnapshot, animatingDifferences: true)
         }
     }
     
     var state: UIState? {
         didSet {
-            self.showEmptyViewIfNeeded()
+            if oldValue?.status != state?.status || oldValue?.message != state?.message {
+                showEmptyViewIfNeeded()
+            }
         }
     }
     
@@ -41,7 +42,7 @@ public class DiffableTableViewController<T: BaseTableViewCell<V>, V>: UITableVie
         super.viewDidLoad()
         registerTableViewCells()
         createDataSource()
-        self.tableView.rowHeight = UITableView.automaticDimension
+        tableView.rowHeight = UITableView.automaticDimension
     }
     
     /// registerTableViewCells that are created using xib, not in storyboard
@@ -63,7 +64,7 @@ public class DiffableTableViewController<T: BaseTableViewCell<V>, V>: UITableVie
     }
     
     public override func didRotate(from fromInterfaceOrientation: UIInterfaceOrientation) {
-        self.showEmptyViewIfNeeded()
+        showEmptyViewIfNeeded()
     }
     
     public override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
@@ -90,7 +91,7 @@ public class DiffableTableViewController<T: BaseTableViewCell<V>, V>: UITableVie
     func showEmptyViewIfNeeded() {
         
         let shouldShow = dataSource.snapshot().itemIdentifiers.isEmpty
-    
+        print(#function, state, state?.message)
         if shouldShow {
             DispatchQueue.main.async {
                 self.tableView.tableFooterView = self.getEmptyView()

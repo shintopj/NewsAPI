@@ -34,7 +34,7 @@ public actor NewsNetworkController: NewsNetworkControllerProtocol {
         
         
         let request = NetworkRequest.get(url: Urls.News.topHeadlines(baseURL), parameters: parameters, headers: [:])
-        print(request.url)
+
         return try await controller.get(request: request)
     }
 }

@@ -14,7 +14,7 @@ class MainTabBar: UITabBarController {
     override func viewDidLoad() {
         super.viewDidLoad()
         setupVCs()
-        selectedIndex = 0
+        selectedIndex = 1
     }
     
 //    override var preferredStatusBarStyle: UIStatusBarStyle {

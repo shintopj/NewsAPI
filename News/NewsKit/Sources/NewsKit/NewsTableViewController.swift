@@ -28,7 +28,6 @@ public class NewsTableViewController: DiffableTableViewController<NewsTableViewC
     
     public override func viewDidLoad() {
         super.viewDidLoad()
-        
         state = UIState(status: .loading)
         getNotifications()
     }
@@ -37,10 +36,10 @@ public class NewsTableViewController: DiffableTableViewController<NewsTableViewC
         
         presenter.$list.sink { newsList in
             guard let list = newsList else {
-                self.state?.update(status: .noData)
                 return
             }
             self.models = list
+            self.state = nil
         }
         .store(in: &cancellables)
     }
